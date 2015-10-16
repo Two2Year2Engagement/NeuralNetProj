@@ -9,6 +9,7 @@ import java.util.Random;
 public class Neuron {
 	private double error; 
 	private double[] weight;
+	private double[] errorWeight;
 	private double output;
 	private double sum;
 	
@@ -16,6 +17,7 @@ public class Neuron {
 		Random rg = new Random();
 		sum = 0;
 		weight = new double[numIn];
+		errorWeight = new double[numIn];
 		for(int i = 0;i < numIn;i++){
 			//Valores entre -1 e 1 para os pesos iniciais
 			weight[i] = (rg.nextInt(301) - 150) / 150; 
@@ -28,6 +30,14 @@ public class Neuron {
 
 	public void setError(double error) {
 		this.error = error;
+	}
+	
+	public double getWeightI(int i){
+		return weight[i];
+	}
+	
+	public void setWeightI(double weight, int i){
+		this.weight[i] = weight;
 	}
 
 	public double[] getWeight() {
@@ -46,6 +56,15 @@ public class Neuron {
 		this.output = output;
 	}
 	
+	
+	public double getErrorWeightI(int i) {
+		return errorWeight[i];
+	}
+
+	public void setErrorWeight(double errorWeight, int i) {
+		this.errorWeight[i] = errorWeight;
+	}
+
 	public void sum(double[] input){
 		for(int i = 0;i < input.length; i++){
 			sum = sum + input[i]*weight[i];
@@ -56,5 +75,4 @@ public class Neuron {
 		output = Math.tanh(sum);		
 	}
 	
-	//faltam métodos para corrigir os pesos baseando-se nos erros
 }
