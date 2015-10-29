@@ -24,7 +24,7 @@ public class Learn {
 				hid[0].setInput(in); hid[0].output();
 				hid[1].setInput(in); hid[1].output();
 				out.setInput(hid); out.output();
-				errorStep = errorStep + errorOut(hid, out, training[i][2]);
+				errorStep = errorStep + Math.abs(errorOut(hid, out, training[i][2]));
 				errorHid(in, hid, out);
 			}
 			error = errorStep / 4;
