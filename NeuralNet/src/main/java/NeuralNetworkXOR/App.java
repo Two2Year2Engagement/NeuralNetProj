@@ -11,7 +11,7 @@ public class App
     	InNeuron[] in = new InNeuron[2];
     	HidNeuron[] hid = new HidNeuron[2];
     	OutNeuron out = new OutNeuron();
-    	Learn learn = new Learn(0.75);
+    	Learn learn = new Learn(0.7);
     	Think think = new Think();
     	
     	for(int i = 0;i < 2;i++){

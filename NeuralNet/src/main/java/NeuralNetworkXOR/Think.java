@@ -30,7 +30,7 @@ public class Think {
 		out.setInput(hid); out.output();
 		
 		output = out.getOutput();
-		System.out.println("O resultado é: "+Math.abs(output));
+		System.out.println("O resultado é: "+Math.round(Math.abs(output)));
 		
 	}
 
